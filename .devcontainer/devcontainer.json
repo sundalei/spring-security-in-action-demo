@@ -1,0 +1,28 @@
+{
+  "name": "Java & Spring Boot",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        // Point to the Java 17 installation provided by the base image
+        "java.jdt.ls.java.home": "/usr/java/openjdk-17",
+        "java.configuration.updateBuildConfiguration": "automatic"
+      },
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "pivotal.vscode-spring-boot",
+        "pivotal.vscode-boot-dev-pack"
+      ]
+    }
+  },
+  // Forward the default Spring Boot port
+  "forwardPorts": [
+    8080
+  ],
+  // Run 'mvn install' after the container is created to download dependencies
+  "postCreateCommand": "mvn install -DskipTests",
+  // Specify the user to connect as. 'vscode' is the non-root user created in the Dockerfile.
+  "remoteUser": "vscode"
+}
