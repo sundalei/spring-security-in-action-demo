@@ -7,7 +7,7 @@
     "vscode": {
       "settings": {
         // Point to the Java 17 installation provided by the base image
-        "java.jdt.ls.java.home": "/usr/java/openjdk-17",
+        "java.jdt.ls.java.home": "/opt/java/openjdk",
         "java.configuration.updateBuildConfiguration": "automatic"
       },
       "extensions": [
