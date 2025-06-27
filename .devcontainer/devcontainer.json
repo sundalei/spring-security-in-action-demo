@@ -1,28 +1,23 @@
 {
-  "name": "Java & Spring Boot",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
+  "name": "Spring Boot with PostgreSQL",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
   "customizations": {
     "vscode": {
       "settings": {
-        // Point to the Java 17 installation provided by the base image
         "java.jdt.ls.java.home": "/opt/java/openjdk",
         "java.configuration.updateBuildConfiguration": "automatic"
       },
       "extensions": [
         "vscjava.vscode-java-pack",
         "pivotal.vscode-spring-boot",
-        "pivotal.vscode-boot-dev-pack"
+        "pivotal.vscode-boot-dev-pack",
+        "cweijan.vscode-postgresql-client2"
       ]
     }
   },
-  // Forward the default Spring Boot port
-  "forwardPorts": [
-    8080
-  ],
-  // Run 'mvn install' after the container is created to download dependencies
-  "postCreateCommand": "mvn install -DskipTests && java -jar target/spring-security-in-action-demo-0.0.1-SNAPSHOT.jar",
-  // Specify the user to connect as. 'vscode' is the non-root user created in the Dockerfile.
+  "forwardPorts": [8080, 5432],
+  "postCreateCommand": "mvn clean install -DskipTests && java -jar target/spring-security-in-action-demo-0.0.1-SNAPSHOT.jar",
   "remoteUser": "vscode"
 }
