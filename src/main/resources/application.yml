@@ -1,14 +1,20 @@
 logging:
   level:
     org.springframework.security: DEBUG
+    org.springframework.jdbc.datasource.init: DEBUG
 
 spring:
   datasource:
-    url: jdbc:postgresql://db:5432/myappdb
+    url: jdbc:postgresql://localhost:5432/myappdb
     username: myappuser
     password: myappsecret
     driver-class-name: org.postgresql.Driver
   jpa:
-    hibernate:
-      ddl-auto: update
     show-sql: true
+    hibernate:
+      ddl-auto: none
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+      data-locations: classpath:data.sql
