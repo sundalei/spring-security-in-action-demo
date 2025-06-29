@@ -1,6 +1,6 @@
-INSERT INTO authorities (username, authority)
+INSERT INTO my_authorities (username, authority)
 VALUES ('john', 'write'),
        ('jack', 'read');
-INSERT INTO users (username, password, enabled)
+INSERT INTO my_users (username, password, enabled)
 VALUES ('john', '12345', 1),
        ('jack', '23456', 1);
