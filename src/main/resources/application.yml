@@ -1,0 +1,7 @@
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+spring:
+  application:
+    name: spring-security-in-action-demo
