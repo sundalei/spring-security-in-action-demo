@@ -6,6 +6,9 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.ldap.DefaultLdapUsernameToDnMapper;
+import org.springframework.security.ldap.DefaultSpringSecurityContextSource;
+import org.springframework.security.ldap.userdetails.LdapUserDetailsManager;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 @Configuration
@@ -14,15 +17,15 @@ public class UserManagementConfig {
     @Bean
     public UserDetailsService userDetailsService() {
 
-        var userDetailsService = new InMemoryUserDetailsManager();
+        var contextSource =
+                new DefaultSpringSecurityContextSource("ldap://127.0.0.1:33389/dc=springframework,dc=org");
+        contextSource.afterPropertiesSet();
 
-        var user = User.withUsername("john")
-                .password("12345")
-                .authorities("read")
-                .build();
+        var manager = new LdapUserDetailsManager(contextSource);
+        manager.setUsernameMapper(new DefaultLdapUsernameToDnMapper("ou=groups", "uid"));
+        manager.setGroupSearchBase("ou=groups");
 
-        userDetailsService.createUser(user);
-        return userDetailsService;
+        return manager;
     }
 
     @Bean

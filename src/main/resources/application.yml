@@ -5,3 +5,8 @@ logging:
 spring:
   application:
     name: spring-security-in-action-demo
+  ldap:
+    embedded:
+      ldif: classpath:server.ldif
+      base-dn: dc=springframework,dc=org
+      port: 33389
