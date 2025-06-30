@@ -17,7 +17,7 @@
       ]
     }
   },
-  "forwardPorts": [8080, 5432],
+  "forwardPorts": [8080],
   "postCreateCommand": "mvn clean install -DskipTests && java -jar target/spring-security-in-action-demo-0.0.1-SNAPSHOT.jar --spring.profiles.active=container",
   "remoteUser": "vscode"
 }
