@@ -5,3 +5,8 @@ logging:
 spring:
   application:
     name: spring-security-in-action-demo
+  ldap:
+    base: dc=springframework,dc=org
+    username: cn=admin,dc=springframework,dc=org
+    password: password
+    urls: ldap://localhost:389
