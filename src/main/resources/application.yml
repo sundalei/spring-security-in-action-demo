@@ -1,6 +1,7 @@
 logging:
   level:
     org.springframework.security: DEBUG
+    com.example: DEBUG
 
 spring:
   application:
