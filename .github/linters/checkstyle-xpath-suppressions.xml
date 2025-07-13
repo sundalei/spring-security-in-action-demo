@@ -4,5 +4,5 @@
     "https://checkstyle.org/dtds/suppressionxpathfilter_1_2.dtd">
 <suppressions>
     <suppress-xpath checks="HideUtilityClassConstructor"
-                    query="//CLASS_DEF[./MODIFIERS/ANNOTATION/IDENT[@text='SpringBootApplication']]"/>
+                    query="//CLASS_DEF[./MODIFIERS[./ANNOTATION[./IDENT[@text='SpringBootApplication']]]]"/>
 </suppressions>
