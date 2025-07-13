@@ -1,11 +1,10 @@
 package com.example.config;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 public class Sha512PasswordEncoder implements PasswordEncoder {
 
