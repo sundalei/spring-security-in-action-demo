@@ -56,13 +56,6 @@
         <property name="optional" value="true"/>
     </module>
 
-     <!-- https://checkstyle.org/filters/suppressionxpathfilter.html -->
-    <module name="SuppressionXpathFilter">
-        <property name="file" value="${org.checkstyle.sun.suppressionxpathfilter.config}"
-                  default="checkstyle-xpath-suppressions.xml" />
-        <property name="optional" value="true"/>
-    </module>
-
     <!-- Checks that a package-info.java file exists for each package.     -->
     <!-- See https://checkstyle.org/checks/javadoc/javadocpackage.html#JavadocPackage -->
 <!--    <module name="JavadocPackage"/>-->
@@ -103,6 +96,12 @@
     <!-- </module> -->
 
     <module name="TreeWalker">
+        <!-- https://checkstyle.org/filters/suppressionxpathfilter.html -->
+        <module name="SuppressionXpathFilter">
+            <property name="file" value="${org.checkstyle.sun.suppressionxpathfilter.config}"
+                    default="checkstyle-xpath-suppressions.xml" />
+            <property name="optional" value="true"/>
+        </module>
 
         <!-- Checks for Javadoc comments.                     -->
         <!-- See https://checkstyle.org/checks/javadoc/index.html -->
@@ -191,11 +190,7 @@
         <module name="ArrayTypeStyle"/>
         <module name="FinalParameters"/>
         <module name="TodoComment"/>
-        <module name="UpperEll"/>
-
-       
-        
-
+        <module name="UpperEll"/> 
     </module>
 
 </module>
