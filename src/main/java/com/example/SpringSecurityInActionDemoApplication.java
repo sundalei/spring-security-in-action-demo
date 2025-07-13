@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringSecurityInActionDemoApplication {
 
   /**
-   * Entry point
+   * Entry point.
+   *
+   * @param args Parameters to configure this app
    */
   public static void main(final String[] args) {
     SpringApplication.run(SpringSecurityInActionDemoApplication.class, args);
