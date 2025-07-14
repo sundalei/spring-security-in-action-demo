@@ -21,6 +21,7 @@ public class SpringSecurityInActionDemoApplication {
 
   /**
    * Command line runner to generate a salt for password encoding.
+   *
    * @return CommandLineRunner instance
    */
   @Bean
