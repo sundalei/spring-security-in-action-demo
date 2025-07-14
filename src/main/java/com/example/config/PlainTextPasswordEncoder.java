@@ -2,7 +2,7 @@ package com.example.config;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-public class PlainTextPasswordEncoder implements PasswordEncoder {
+public final class PlainTextPasswordEncoder implements PasswordEncoder {
 
   @Override
   public String encode(CharSequence rawPassword) {

@@ -1,5 +1,6 @@
 package com.example;
 
+import java.util.Arrays;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -36,6 +37,13 @@ public class SpringSecurityInActionDemoApplication {
       byte[] key = bytesKeyGenerator.generateKey();
       int keyLength = bytesKeyGenerator.getKeyLength();
       System.out.println("Generated key: " + key + ", Key Length: " + keyLength);
+
+      BytesKeyGenerator sharedKeyGenerator = KeyGenerators.shared(16);
+      byte[] key1 = sharedKeyGenerator.generateKey();
+      byte[] key2 = sharedKeyGenerator.generateKey();
+      System.out.println("Generated shared key 1: " + key1);
+      System.out.println("Generated shared key 2: " + key2);
+      System.out.println("Keys are equal: " + Arrays.equals(key1, key2));
     };
   }
 }
