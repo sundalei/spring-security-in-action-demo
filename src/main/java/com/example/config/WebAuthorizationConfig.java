@@ -7,10 +7,10 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-public class WebAuthorizationConfig {
+public final class WebAuthorizationConfig {
 
   @Bean
-  SecurityFilterChain configure(HttpSecurity http) throws Exception {
+  SecurityFilterChain configure(final HttpSecurity http) throws Exception {
 
     http.httpBasic(Customizer.withDefaults());
 
