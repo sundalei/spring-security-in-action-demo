@@ -27,6 +27,11 @@ public final class UserManagementConfig {
     return userDetailsService;
   }
 
+  /**
+   * Provides a PasswordEncoder bean that does not perform any encoding.
+   *
+   * @return PasswordEncoder instance that does not encode passwords.
+   */
   @Bean
   @SuppressWarnings("deprecation")
   public PasswordEncoder passwordEncoder() {
