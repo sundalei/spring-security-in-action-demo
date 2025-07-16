@@ -9,8 +9,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 @Configuration
-public class UserManagementConfig {
+public final class UserManagementConfig {
 
+  /**
+   * Creates a UserDetailsService bean with an in-memory user.
+   *
+   * @return UserDetailsService instance with a predefined user.
+   */
   @Bean
   public UserDetailsService userDetailsService() {
 
