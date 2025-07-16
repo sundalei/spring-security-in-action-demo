@@ -153,7 +153,9 @@
         <module name="ParenPad" />
         <module name="TypecastParenPad" />
         <module name="WhitespaceAfter" />
-        <module name="WhitespaceAround" />
+        <module name="WhitespaceAround">
+          <property name="allowEmptyMethods" value="true"/>
+        </module>
 
         <!-- Modifier Checks                                    -->
         <!-- See https://checkstyle.org/checks/modifier/index.html -->
