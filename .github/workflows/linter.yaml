@@ -29,7 +29,6 @@ jobs:
       - name: Super-linter
         uses: super-linter/super-linter@v7.4.0
         env:
-          LINTER_RULES_PATH: .github/linters/
           JAVA_FILE_NAME: my-checks.xml
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_JAVA: true
