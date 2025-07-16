@@ -35,3 +35,4 @@ jobs:
           VALIDATE_JAVA: true
           VALIDATE_GOOGLE_JAVA_FORMAT: true
           VALIDATE_XML: true
+          VALIDATE_YAML: true
