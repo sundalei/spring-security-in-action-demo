@@ -9,7 +9,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 @Configuration
-public final class UserManagementConfig {
+public class UserManagementConfig {
 
   /**
    * Creates a UserDetailsService bean with an in-memory user.
@@ -17,7 +17,7 @@ public final class UserManagementConfig {
    * @return UserDetailsService instance with a predefined user.
    */
   @Bean
-  public UserDetailsService userDetailsService() {
+  UserDetailsService userDetailsService() {
 
     var userDetailsService = new InMemoryUserDetailsManager();
 
@@ -34,7 +34,7 @@ public final class UserManagementConfig {
    */
   @Bean
   @SuppressWarnings("deprecation")
-  public PasswordEncoder passwordEncoder() {
+  PasswordEncoder passwordEncoder() {
     return NoOpPasswordEncoder.getInstance();
   }
 }
