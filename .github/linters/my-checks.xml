@@ -153,7 +153,7 @@
         <module name="ArrayTypeStyle" />
         <module name="FinalParameters">
           <property name="tokens" value="CTOR_DEF" />
-        <module>
+        </module>
         <module name="TodoComment" />
         <module name="UpperEll" /> 
     </module>
