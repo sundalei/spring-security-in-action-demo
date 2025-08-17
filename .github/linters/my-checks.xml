@@ -19,13 +19,11 @@
 
   <module name="Translation" />
 
-    <!-- Checks for Size Violations.                    -->
-    <!-- See https://checkstyle.org/checks/sizes/index.html -->
-    <module name="FileLength" />
-    <module name="LineLength">
-        <property name="fileExtensions" value="java" />
-        <property name="max" value="120" />
-    </module>
+  <module name="FileLength" />
+  <module name="LineLength">
+    <property name="fileExtensions" value="java" />
+    <property name="max" value="120" />
+  </module>
 
     <!-- Checks for whitespace                               -->
     <!-- See https://checkstyle.org/checks/whitespace/index.html -->
@@ -63,7 +61,9 @@
         <module name="InvalidJavadocPosition" />
         <module name="JavadocMethod" />
         <module name="JavadocType" />
-        <module name="JavadocVariable" />
+        <module name="JavadocVariable">
+          <property name="ignoreNamePattern" value="log|logger|LOG"/>
+        </module>
         <module name="JavadocStyle" />
         <module name="MissingJavadocMethod" />
 
@@ -79,9 +79,9 @@
         <module name="StaticVariableName" />
         <module name="TypeName" />
 
-        <!-- Checks for imports                              -->
-        <!-- See https://checkstyle.org/checks/imports/index.html -->
-        <module name="AvoidStarImport" />
+        <module name="AvoidStarImport">
+          <property name="allowClassImports" value="true"/>
+        </module>
         <module name="IllegalImport" /> <!-- defaults to sun.* packages -->
         <module name="RedundantImport" />
         <module name="UnusedImports">

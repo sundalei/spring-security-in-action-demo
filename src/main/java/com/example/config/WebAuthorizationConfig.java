@@ -1,5 +1,6 @@
 package com.example.config;
 
+import com.example.filters.AuthenticationLoggingFilter;
 import com.example.filters.RequestValidationFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,6 +20,7 @@ public class WebAuthorizationConfig {
     http.authorizeHttpRequests(c -> c.anyRequest().authenticated());
 
     http.addFilterBefore(new RequestValidationFilter(), BasicAuthenticationFilter.class);
+    http.addFilterAfter(new AuthenticationLoggingFilter(), BasicAuthenticationFilter.class);
 
     return http.build();
   }
