@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 
 public class AuthenticationLoggingFilter implements Filter {
 
-  private final Logger LOG = LoggerFactory.getLogger(AuthenticationLoggingFilter.class);
+  private static final Logger LOG = LoggerFactory.getLogger(AuthenticationLoggingFilter.class);
 
   @Override
   public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
