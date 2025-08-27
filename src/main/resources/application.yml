@@ -5,3 +5,6 @@ logging:
 spring:
   application:
     name: spring-security-in-action-demo
+
+authorization:
+  key: SD9cICjl1e
