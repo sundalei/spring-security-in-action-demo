@@ -2,22 +2,24 @@ package com.example.filters;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.filter.OncePerRequestFilter;
 
-public class AuthenticationLoggingFilter implements Filter {
+public class AuthenticationLoggingFilter extends OncePerRequestFilter {
 
   private static final Logger LOG = LoggerFactory.getLogger(AuthenticationLoggingFilter.class);
 
   @Override
-  public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-      throws IOException, ServletException {
+  protected void doFilterInternal(
+      HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+      throws ServletException, IOException {
 
-    HttpServletRequest httpRequest = (HttpServletRequest) request;
-    String requestId = httpRequest.getHeader("Request-Id");
+    String requestId = request.getHeader("Request-Id");
     LOG.info("Successfully authenticated request with id {}", requestId);
 
-    chain.doFilter(request, response);
+    filterChain.doFilter(request, response);
   }
 }

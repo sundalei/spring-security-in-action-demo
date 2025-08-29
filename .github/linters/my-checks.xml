@@ -25,8 +25,8 @@
     <property name="max" value="120" />
   </module>
 
-    <!-- Checks for whitespace                               -->
-    <!-- See https://checkstyle.org/checks/whitespace/index.html -->
+  <!-- Checks for whitespace                               -->
+  <!-- See https://checkstyle.org/checks/whitespace/index.html -->
     <module name="FileTabCharacter" />
 
     <!-- Miscellaneous other checks.                   -->
